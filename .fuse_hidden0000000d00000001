@@ -1,0 +1,10 @@
+'''
+Modelled after a Thread in Java; you can instantiate algorithms with data, and call them from a run method. They are also independent and can be parallelized.
+'''
+class BourgainEmbeddingAlgorithm(Algorithm):
+
+	def __init__(self, matrix):
+		self.matrixA = matrix
+
+	def runAlgorithm():
+		#bulk of the code goes here
