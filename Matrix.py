@@ -19,10 +19,13 @@ class Matrix():
 		buildVector = Vector()
 		for i in range len(self.vectorList):
 			buildVector.add(self.vectorList[i][n])
-		return self.vectorList[i]
+		return buildVector
 
 	def getCol(j):
 		return self.vectorList[j]
 
 	def get(i,j):
 		return self.vectorList[i].get[j]
+
+	def set(col,row, value):
+		self.vectorList[col].insert(row,value)
