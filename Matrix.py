@@ -1,10 +1,12 @@
 '''
 Optimized for getting columns, not rows.
+Input: list of vectors, rank of the Matrix
 '''
 class Matrix():
 
-	def __init__(self, vectors):
+	def __init__(self, vectors, inputRank=None):
 		self.vectorList = vectors
+		self.rank = inputRank
 
 	def numCols():
 		return len(self.vectorList[0])
@@ -13,7 +15,7 @@ class Matrix():
 		return len(self.vectorList)
 
 	def rank():
-		return None # IMPLEMENT THIS
+		return self.rank
 
 	def getRow(n):
 		buildVector = Vector()
