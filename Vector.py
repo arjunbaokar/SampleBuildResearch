@@ -1,16 +1,19 @@
 class Vector():
 
-	def __init__(self, row_values = None):
-		if rowValues != None:
-			self.rowValues = row_values
+	def __init__(self, col_values = None):
+		if colValues != None:
+			self.colValues = col_values
 		else
-			self.rowValues = []
+			self.colValues = []
 
 	def __len__(self):
-		return len(self.rowValues)
+		return len(self.colValues)
 
 	def get(n):
-		return rowValues[n]
+		return colValues[n]
 
 	def add(n):
-		rowValues += [n]
+		colValues += [n]
+
+	def insert(index, value):
+		self.colValues[index] = value
