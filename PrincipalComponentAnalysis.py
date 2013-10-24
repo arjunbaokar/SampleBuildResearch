@@ -8,6 +8,7 @@ class PrincipalComponentAnalysis(api.Algorithm):
 		self.startingDimension = inputDim
 		self.matrix = targetMatrix
 		self.targetDimension = desiredDim
+		self.trainingObservations = 100
 
 	def setTargetMatrix(targetMatrix):
 		self.matrix = targetMatrix
@@ -17,7 +18,7 @@ class PrincipalComponentAnalysis(api.Algorithm):
 
 	def trainNode(self, node):
 		if node.is_trainable():
-			x = numpy.random.random((100, self.startingDimension))  # 25 variables, 100 observations
+			x = numpy.random.random((self.trainingObservations, self.startingDimension))  # numObservations, numVariables
 			node.train(x)
 			node.stop_training()
 			print "output_dim: " + str(node.output_dim)
