@@ -1,0 +1,16 @@
+implement PCA
+
+eig(symmetric matrix):
+	find library to solve eigenvectors (basically eigenvector solver)
+
+eig(Atranspose * A) => A is nxp matrix
+At = A transpose
+
+S = sigma
+1. S = AtA
+2. Xo = random p-dimensional vector
+3. Xn = S(Xn-1)
+4. Xn = Xn/||Xn||  <= normalize Xn
+5. back to 3 until ||X_n - X_(n-1)|| < delta
+
+find library that gives eigenvectors incrementally (largest k eigenvectors), not all at once

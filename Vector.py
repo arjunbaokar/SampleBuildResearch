@@ -1,9 +1,9 @@
 class Vector():
 
 	def __init__(self, col_values = None):
-		if colValues != None:
+		if col_values != None:
 			self.colValues = col_values
-		else
+		else:
 			self.colValues = []
 
 	def __len__(self):
@@ -17,3 +17,6 @@ class Vector():
 
 	def insert(index, value):
 		self.colValues[index] = value
+
+	def toList():
+		return self.colValues
