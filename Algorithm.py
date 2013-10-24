@@ -8,6 +8,6 @@ runAlgorithm() which runs the algorithm on the dataset. This can call other meth
 '''
 class Algorithm(object):
 
-	def runAlgorithm():
+	def runAlgorithm(self):
 		#bulk of the code goes here
 		pass

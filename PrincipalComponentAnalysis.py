@@ -2,9 +2,9 @@ import mdp
 import numpy
 import api
 
-class PrincipalComponentAnalysis(Algorithm):
+class PrincipalComponentAnalysis(api.Algorithm):
 
-	def __init__(targetMatrix, desiredDim):
+	def __init__(self, targetMatrix, desiredDim):
 		self.targetDimension = desiredDim
 		self.matrix = targetMatrix
 
@@ -14,7 +14,7 @@ class PrincipalComponentAnalysis(Algorithm):
 	def setTargetDimension(desiredDim):
 		self.targetDimension = desiredDim
 
-	def runAlgorithm():
+	def runAlgorithm(self):
 		if (self.targetDimension == None):
 			print "Error: No target dimension set. Please use setTargetDimension(d) to specify matrix."
 		elif (self.matrix == None):

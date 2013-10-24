@@ -1,4 +1,4 @@
-class Vector():
+class Vector(object):
 
 	def __init__(self, col_values = None):
 		if col_values != None:
@@ -9,16 +9,16 @@ class Vector():
 	def __len__(self):
 		return len(self.colValues)
 
-	def get(n):
-		return colValues[n]
+	def get(self, n):
+		return self.colValues[n]
 
-	def add(n):
-		colValues += [n]
+	def add(self, n):
+		self.colValues += [n]
 
-	def insert(index, value):
+	def insert(self, index, value):
 		self.colValues[index] = value
 
-	def toList():
+	def toList(self):
 		return self.colValues
 
 
@@ -27,31 +27,31 @@ class Vector():
 Optimized for getting columns, not rows.
 Input: list of vectors, rank of the Matrix
 '''
-class Matrix():
+class Matrix(object):
 
 	def __init__(self, vectors, inputRank=None):
 		self.vectorList = vectors
 		self.rank = inputRank
 
-	def numCols():
+	def numCols(self):
 		return len(self.vectorList[0])
 
-	def numRows():
+	def numRows(self):
 		return len(self.vectorList)
 
-	def rank():
+	def rank(self):
 		return self.rank
 
-	def getRow(n):
+	def getRow(self,n):
 		buildVector = Vector()
 		for i in range(0,len(self.vectorList)):
-			buildVector.add(self.vectorList[i][n])
+			buildVector.add(self.vectorList[i].get(n))
 		return buildVector
 
-	def getCol(j):
+	def getCol(self,j):
 		return self.vectorList[j]
 
-	def get(i,j):
+	def get(self,i,j):
 		return self.vectorList[i].get[j]
 
 	def set(col,row, value):
@@ -69,6 +69,6 @@ runAlgorithm() which runs the algorithm on the dataset. This can call other meth
 '''
 class Algorithm(object):
 
-	def runAlgorithm():
+	def runAlgorithm(self):
 		#bulk of the code goes here
 		pass

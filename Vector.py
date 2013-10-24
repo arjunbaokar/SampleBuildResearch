@@ -9,14 +9,14 @@ class Vector():
 	def __len__(self):
 		return len(self.colValues)
 
-	def get(n):
+	def get(self,n):
 		return colValues[n]
 
-	def add(n):
+	def add(self, n):
 		colValues += [n]
 
-	def insert(index, value):
+	def insert(self, index, value):
 		self.colValues[index] = value
 
-	def toList():
+	def toList(self):
 		return self.colValues
