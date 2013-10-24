@@ -1,3 +1,6 @@
+''' Basic script to test new functionality/algorithms.
+Edit as you please; this is not important to the framework itself.'''
+
 from api import *
 from PrincipalComponentAnalysis import PrincipalComponentAnalysis
 
