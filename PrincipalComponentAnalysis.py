@@ -23,4 +23,7 @@ class PrincipalComponentAnalysis(api.Algorithm):
 			twoDimList = [];
 			for i in range (0,self.matrix.numRows()):
 				twoDimList.append(self.matrix.getRow(i).toList())
-			print twoDimList
+			
+			prePcaMatrix = numpy.array(twoDimList, dtype='float64')
+			pcaResult = mdp.pca(prePcaMatrix)
+			return pcaResult
