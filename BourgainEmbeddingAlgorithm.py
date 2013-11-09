@@ -14,21 +14,21 @@ class BourgainEmbeddingAlgorithm(api.Algorithm):
 			self.m1 = startingDim
 			self.m2 = 1
 		else:
-			self.m1 = startingDim**(0.5)
+			#self.m1 = startingDim**(0.5)
+			self.m1 = n**0.5
 			self.m2 = m1
 
 	def runAlgorithm(self):
 		if self.m1 == None or self.m2 == None:
 			print "m1 and m2 are null, algorithm will do nothing"
+		else:
+			A = self.constructRandSet()
+			m = []
 
-		A = self.constructRandSet()
-		m = []
-
-		for i in range(0,self.m1):
-			for j in range(0,self.m2):
-				m[i][j] = self.minDist(self.V,A[i][j])
-
-		return m
+			for i in range(0,self.m1):
+				for j in range(0,self.m2):
+					m[i][j] = self.minDist(self.V,A[i][j])
+			return m
 
 
 	def minDist(self, V, Ai):
