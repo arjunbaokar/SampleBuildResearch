@@ -1,6 +1,7 @@
 import random
 import math
 import api
+import sys
 
 class BourgainEmbeddingAlgorithm(api.Algorithm):
 
@@ -8,7 +9,7 @@ class BourgainEmbeddingAlgorithm(api.Algorithm):
 		self.V = points
 		self.n = numPointsToProject
 		self.m1 = None
-		self.m2 = Non
+		self.m2 = None
 		if startingDim <= 4:
 			self.m1 = startingDim
 			self.m2 = 1
@@ -25,16 +26,22 @@ class BourgainEmbeddingAlgorithm(api.Algorithm):
 
 		for i in range(0,self.m1):
 			for j in range(0,self.m2):
-				m[i][j] = self.minDist(V,A[i][j])
+				m[i][j] = self.minDist(self.V,A[i][j])
+
+		return m
 
 
 	def minDist(self, V, Ai):
 		#take Euclidean distance between V and A, find minimum of that
-		minSoFar = sys.maxint
+		minSoFar = sys.maxsize
 		for x in V:
 			euclidDist = 0
-			for i in range(0,x):
-				euclidDist += (Ai[i]-x[i])**2
+			if type(Ai) == list:
+				for i in range(0,len(x)):
+					euclidDist += (Ai[i]-x[i])**2
+			else:
+				for i in range(0,len(x)):
+					euclidDist += (Ai-x[i])**2
 			euclidDist = euclidDist**0.5
 			if euclidDist < minSoFar:
 				minSoFar = euclidDist
@@ -43,15 +50,15 @@ class BourgainEmbeddingAlgorithm(api.Algorithm):
 
 
 	def constructRandSet(self):
-		toReturn = set()
-		for i in range (0,len(V)):
-			if useCurrentNumber(i):
-				toReturn.add(V[i])
+		toReturn = []
+		for i in range (0,len(self.V)):
+			if self.useCurrentNumber(i):
+				toReturn.append(self.V[i])
 		return toReturn
 
 
 	# Decides if current number will be used in algorithm. Returns true with P(X) = 2**-i, where i is supplied by the caller
-	def useCurrentNumber(i):
+	def useCurrentNumber(self,i):
 		if 1 == random.randrange(2**i):
 			return True
 		return False
