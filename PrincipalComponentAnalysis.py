@@ -4,7 +4,7 @@ import api
 
 class PrincipalComponentAnalysis(api.Algorithm):
 
-	def __init__(self, inputDim, targetMatrix, desiredDim):
+	def __init__(self, targetMatrix, inputDim, desiredDim):
 		self.startingDimension = inputDim
 		self.matrix = targetMatrix
 		self.targetDimension = desiredDim
